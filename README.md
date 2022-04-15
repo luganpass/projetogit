@@ -2,8 +2,8 @@
 
 
 ## INTEGRANTES DA EQUIPE
-Lucas Gabriel
-Sávio Berdine
+* Lucas Gabriel
+* Sávio Berdine
 
 ## Descrição geral do projeto 
 Nesta descrição, apresente um texto resumido com a(s) principal(is) funcionalidade(s) do sistema. 
