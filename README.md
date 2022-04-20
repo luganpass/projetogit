@@ -2,8 +2,9 @@
 
 
 ## INTEGRANTES DA EQUIPE
-* Lucas Gabriel
-* Sávio Berdine
+* Lucas Gabriel - luganpass@gmail.com
+* Sávio Berdine - savio.berdine@gmail.com
+* Gabriel Souza - gabriel.souzaa.980@gmail.com
 
 ## Descrição geral do projeto 
 Nesta descrição, apresente um texto resumido com a(s) principal(is) funcionalidade(s) do sistema. 
