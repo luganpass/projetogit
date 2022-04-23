@@ -1,6 +1,6 @@
 package models;
 
-import helpers.UserType;
+import helpers.Enums.UserType;
 
 public class User extends Identifiable {
     private String name;
