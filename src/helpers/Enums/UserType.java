@@ -1,4 +1,4 @@
-package helpers;
+package helpers.Enums;
 
 public enum UserType {
     PetOwner,
