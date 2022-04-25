@@ -1,6 +1,6 @@
 package repositories;
 
-public class VaccineRepository {
+public class VaccineRepository extends Repository {
 
     public VaccineRepository() {
         super();
