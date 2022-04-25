@@ -2,7 +2,7 @@ package models;
 
 import java.time.LocalDate;
 
-import helpers.Species;
+import helpers.Enums.Species;
 
 public class Pet extends Identifiable {
     private String name;
