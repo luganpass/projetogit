@@ -18,6 +18,10 @@ public class User extends Identifiable {
         this.userType = userType;
     }
 
+    public User() {
+        super("dkomlk");
+    }
+
     public String getName() {
         return this.name;
     }
