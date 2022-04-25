@@ -28,6 +28,10 @@ public class Pet extends Identifiable {
         this.owner = owner;
     }
 
+    public Pet() {
+        super("id");
+    }
+
     public String getName() {
         return this.name;
     }
