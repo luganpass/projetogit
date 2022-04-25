@@ -1,7 +1,8 @@
 package repositories;
 
-import java.util.ArrayList;
-
+import helpers.DatabaseCommunication.DataBaseCommunication;
+import helpers.Exceptions.UserAlreadyExistsException;
+import helpers.Exceptions.UserNotFoundException;
 import models.Identifiable;
 import models.User;
 
@@ -23,14 +24,14 @@ public class UserRepository extends Repository {
 
     @Override
     public void addObject(Identifiable object) throws Exception {
-        User userToAdd = (User) identifiable;
+        User userToAdd = (User) object;
         for (Identifiable identifiable : this.getObjects()) {
             User castedUser = (User) identifiable;
             if (castedUser.getEmail()== userToAdd.getEmail()){
                 throw new UserAlreadyExistsException(userToAdd.getEmail());
             }
         }
-        this.objects.add(object);
-        DataBaseCommunication.addObject(object, this.filePath);
+        this.addObject(object);
+        DataBaseCommunication.addObject(object, this.getFilePath());
     }
 }
