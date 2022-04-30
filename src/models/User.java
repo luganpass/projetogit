@@ -62,4 +62,31 @@ public class User extends Identifiable {
         return this.password == password;
     }
 
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof User){
+            User userObj = (User)obj;
+            if (!userObj.getName().equals(this.getName())){
+                return false;
+            }
+            else if (!userObj.getEmail().equals(this.getEmail())){
+                return false;
+            }
+            else if (userObj.getAge() != this.getAge()){
+                return false;
+            }                      
+            else if (!userObj.getUserType().equals(this.getUserType())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

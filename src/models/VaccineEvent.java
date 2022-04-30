@@ -48,5 +48,31 @@ public class VaccineEvent extends Event {
     public void setVaccine(Vaccine vaccine) {
         this.vaccine = vaccine;
     }
-
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof VaccineEvent){
+            VaccineEvent vaccineEventObj = (VaccineEvent)obj;
+            if (vaccineEventObj.getDose()!= this.getDose()){
+                return false;
+            }
+            else if (vaccineEventObj.getDoseNumber() != this.getDoseNumber()){
+                return false;
+            }
+            else if (!vaccineEventObj.getAppointment().equals(this.getAppointment())){
+                return false;
+            }
+            else if(!vaccineEventObj.getVaccine().equals(this.getVaccine())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

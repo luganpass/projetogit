@@ -25,4 +25,25 @@ public class Vaccine extends Identifiable {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Vaccine){
+            Vaccine symptomObj = (Vaccine)obj;
+            if (!symptomObj.getName().equals(this.getName())){
+                return false;
+            }
+            else if (!symptomObj.getImagePath().equals(this.getImagePath())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }
