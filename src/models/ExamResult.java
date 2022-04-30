@@ -48,4 +48,33 @@ public class ExamResult extends Listable {
     public void setResults(String results) {
         this.results = results;
     }
+    @Override
+    public boolean equals (Object obj){
+        if(!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof ExamResult){
+            ExamResult examResultObj = (ExamResult)obj;
+            if (!examResultObj.getClinic().equals(this.getClinic())){
+                return false; 
+            }
+            else if (!examResultObj.getTitle().equals(this.getTitle())){
+                return false;
+            }
+            else if (!examResultObj.getVet().equals(this.getVet())){
+                return false;
+            }
+            else if (!examResultObj.getResults().equals(this.getResults())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
+
 }
