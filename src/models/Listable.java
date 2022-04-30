@@ -38,4 +38,29 @@ public abstract class Listable extends Identifiable {
         this.date = date;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(!super.equals(obj)){
+            return false;
+        }       
+        if (obj instanceof Listable){
+            Listable listableObj = (Listable)obj;
+            if(!listableObj.getTitle().equals(this.getTitle())){
+                return false;
+            }
+            else if (!listableObj.getSubtitle().equals(this.getSubtitle())){
+                return false;
+            }
+            else if (!listableObj.getDate().equals(this.getDate())){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
 }

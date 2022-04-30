@@ -48,4 +48,31 @@ public class MedicationEvent extends Event {
     public void setMedication(Medication medication) {
         this.medication = medication;
     }
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof MedicationEvent){
+            MedicationEvent medicationEventObj = (MedicationEvent)obj;
+            if (medicationEventObj.getDose() != this.getDose()){
+                return false;
+            }
+            else if (medicationEventObj.getDoseNumber() != (this.getDoseNumber())){
+                return false;
+            }
+            else if(!medicationEventObj.getAppointment().equals(this.getAppointment())){
+                return false;
+            }
+            else if (!medicationEventObj.getMedication().equals(this.getMedication())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }
