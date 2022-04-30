@@ -1,6 +1,6 @@
 package repositories;
 
-public class MedicationEventRepository extends Repository {
+public class MedicationEventRepository extends ListableRepository {
 
     public MedicationEventRepository() {
         super();
