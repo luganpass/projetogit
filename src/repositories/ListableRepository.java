@@ -8,8 +8,8 @@ import models.Listable;
 
 public abstract class ListableRepository extends Repository {
 
-    public ListableRepository() {
-        super();
+    public ListableRepository(String repositoryName) {
+        super(repositoryName);
     }
     
     public ArrayList<Listable> getPetsListFromNewerToOlder() throws Exception {

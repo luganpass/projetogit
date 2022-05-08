@@ -9,7 +9,7 @@ import models.Pet;
 public class PetRepository extends Repository {
 
     public PetRepository() {
-        super();
+        super("PetRepository");
     }
     
     public ArrayList<Pet> getPetsListFromNewerToOlder() throws Exception {

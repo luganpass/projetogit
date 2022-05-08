@@ -7,12 +7,16 @@ import helpers.Exceptions.ObjectNotFoundException;
 import models.Identifiable;
 
 public abstract class Repository {
-    private ArrayList<Identifiable> objects;
+    private ArrayList<Identifiable> objects = new ArrayList<Identifiable>();
     private String filePath;
 
-    public Repository() {
-        this.filePath = DataBaseCommunication.createDataBaseFor(Repository.class.getName());
-        this.objects = DataBaseCommunication.getObjectsFromDataBase(this.filePath);
+    public Repository(String repositoryName) {
+        try {
+            this.filePath = DataBaseCommunication.createDataBaseFor(repositoryName);
+            this.objects = DataBaseCommunication.getObjectsFromDataBase(this.filePath, this.getClass());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public ArrayList<Identifiable> getObjects() {
@@ -29,14 +33,14 @@ public abstract class Repository {
     
     public void addObject(Identifiable object) throws Exception {
         this.objects.add(object);
-        DataBaseCommunication.addObject(object, this.filePath);
+        DataBaseCommunication.save(this.objects, this.filePath);
     }
 
     public void removeObject(Identifiable object) throws Exception {
-        if(!DataBaseCommunication.removeObjectWithId(object.getId(), this.filePath)) {
+        if (!this.objects.remove(object)) {
             throw new ObjectNotFoundException(object);
-        } else if (!this.objects.remove(object)) {
-            throw new ObjectNotFoundException(object);
+        } else {
+            DataBaseCommunication.save(this.objects, this.filePath);
         }
     }
 
