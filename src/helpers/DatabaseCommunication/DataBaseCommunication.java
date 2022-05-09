@@ -17,8 +17,14 @@ import models.Diagnosis;
 import models.ExamResult;
 import models.Identifiable;
 import models.Listable;
+import models.Medication;
 import models.MedicationEvent;
-import repositories.AppointmentRepository;
+import models.Pet;
+import models.Session;
+import models.Symptom;
+import models.User;
+import models.Vaccine;
+import models.VaccineEvent;
 
 public class DataBaseCommunication {
     static Gson gson = new Gson();
@@ -66,37 +72,85 @@ public class DataBaseCommunication {
                 }
                 return listablesResult;
             case "MedicationEventRepository":
-                Type medicationEventsListType = new TypeToken<ArrayList<Listable>>(){}.getType();
-                ArrayList<MedicationEvent> medicationEventssArray = gson.fromJson(a, medicationEventsListType);
+                Type medicationEventsListType = new TypeToken<ArrayList<MedicationEvent>>(){}.getType();
+                ArrayList<MedicationEvent> medicationEventsArray = gson.fromJson(a, medicationEventsListType);
                 ArrayList<Identifiable> medicationEventResult = new ArrayList<Identifiable>();
-                for (Identifiable obj : medicationEventssArray) {
+                for (Identifiable obj : medicationEventsArray) {
                     medicationEventResult.add(obj);
                 }
                 return medicationEventResult;
-            // case 6:
-            //     return new TypeToken<Medication>(){}.getType();
-            // case 7:
-            //     return new TypeToken<Pet>(){}.getType();
-            // case 8:
-            //     return new TypeToken<Identifiable>(){}.getType();
-            // case 9:
-            //     return new TypeToken<Session>(){}.getType();
-            // case 10:
-            //     return new TypeToken<Symptom>(){}.getType();
-            // case 11:
-            //     return new TypeToken<User>(){}.getType();
-            // case 12:
-            //     return new TypeToken<VaccineEvent>(){}.getType();
-            // case 13:
-            //     return new TypeToken<Vaccine>(){}.getType();
-            default:
-                Type identifiablesListType = new TypeToken<ArrayList<Listable>>(){}.getType();
+            case "MedicationRepository":
+                Type medicationsListType = new TypeToken<ArrayList<Medication>>(){}.getType();
+                ArrayList<Medication> medicationsArray = gson.fromJson(a, medicationsListType);
+                ArrayList<Identifiable> medicationsResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : medicationsArray) {
+                    medicationsResult.add(obj);
+                }
+                return medicationsResult;
+            case "PetRepository":
+                Type petsListType = new TypeToken<ArrayList<Pet>>(){}.getType();
+                ArrayList<Pet> petsArray = gson.fromJson(a, petsListType);
+                ArrayList<Identifiable> petsResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : petsArray) {
+                    petsResult.add(obj);
+                }
+                return petsResult;
+            case "Identifiable":
+                Type identifiablesListType = new TypeToken<ArrayList<Identifiable>>(){}.getType();
                 ArrayList<Identifiable> identifiablesArray = gson.fromJson(a, identifiablesListType);
                 ArrayList<Identifiable> identifiablesResult = new ArrayList<Identifiable>();
                 for (Identifiable obj : identifiablesArray) {
                     identifiablesResult.add(obj);
                 }
                 return identifiablesResult;
+            case "Session":
+                Type sessionsListType = new TypeToken<ArrayList<Session>>(){}.getType();
+                ArrayList<Identifiable> sessionsArray = gson.fromJson(a, sessionsListType);
+                ArrayList<Identifiable> sessionsResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : sessionsArray) {
+                    sessionsResult.add(obj);
+                }
+                return sessionsResult;
+            case "SymptomRepository":
+                Type symptomsListType = new TypeToken<ArrayList<Symptom>>(){}.getType();
+                ArrayList<Identifiable> symptomsArray = gson.fromJson(a, symptomsListType);
+                ArrayList<Identifiable> symptomsResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : symptomsArray) {
+                    symptomsResult.add(obj);
+                }
+                return symptomsResult;
+            case "UserRepository":
+                Type usersListType = new TypeToken<ArrayList<User>>(){}.getType();
+                ArrayList<Identifiable> usersArray = gson.fromJson(a, usersListType);
+                ArrayList<Identifiable> usersResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : usersArray) {
+                    usersResult.add(obj);
+                }
+                return usersResult;
+            case "VaccineEventRepository":
+                Type vaccineEventsListType = new TypeToken<ArrayList<VaccineEvent>>(){}.getType();
+                ArrayList<Identifiable> vaccineEventsArray = gson.fromJson(a, vaccineEventsListType);
+                ArrayList<Identifiable> vaccineEventsResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : vaccineEventsArray) {
+                    vaccineEventsResult.add(obj);
+                }
+                return vaccineEventsResult;
+            case "VaccineRepository":
+                Type vaccinesListType = new TypeToken<ArrayList<Vaccine>>(){}.getType();
+                ArrayList<Identifiable> vaccinesArray = gson.fromJson(a, vaccinesListType);
+                ArrayList<Identifiable> vaccinesResult = new ArrayList<Identifiable>();
+                for (Identifiable obj : vaccinesArray) {
+                    vaccinesResult.add(obj);
+                }
+                return vaccinesResult;
+            default:
+                Type identifiablesListType2 = new TypeToken<ArrayList<Identifiable>>(){}.getType();
+                ArrayList<Identifiable> identifiablesArray2 = gson.fromJson(a, identifiablesListType2);
+                ArrayList<Identifiable> identifiablesResult2 = new ArrayList<Identifiable>();
+                for (Identifiable obj : identifiablesArray2) {
+                    identifiablesResult2.add(obj);
+                }
+                return identifiablesResult2;
         }
         
     }
