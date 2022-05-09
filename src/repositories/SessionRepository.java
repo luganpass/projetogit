@@ -6,7 +6,7 @@ public class SessionRepository extends Repository {
     public static Session activeSession;
 
     public SessionRepository() {
-        super();
+        super("SessionRepository");
     }
 
     public void startSession(Session session) throws Exception {
