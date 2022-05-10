@@ -15,4 +15,20 @@ public abstract class Identifiable {
         this.id = id;
     }
 
+    @Override
+    public boolean equals (Object obj){
+        
+        if (obj instanceof Identifiable){
+            Identifiable identifiableObj = (Identifiable)obj;
+            if (!identifiableObj.getId().equals(this.getId())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

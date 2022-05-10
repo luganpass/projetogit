@@ -18,4 +18,23 @@ public abstract class Event extends Listable {
         this.pet = pet;
     }
 
+
+    @Override
+    public boolean equals(Object obj){
+        if(!super.equals(obj)){
+            return false;
+        }       
+        if (obj instanceof Event){
+            Event eventObj = (Event)obj;
+            if(!eventObj.getPet().equals(this.getPet())){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

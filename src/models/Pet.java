@@ -104,4 +104,46 @@ public class Pet extends Identifiable {
         this.owner = owner;
     }
     
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Pet){
+            Pet petObj = (Pet)obj;
+            if (!petObj.getName().equals(this.getName())){
+                return false;
+            }
+            else if (!petObj.getSpecies().equals(this.getSpecies())){
+                return false;
+            }
+            else if(petObj.getWeight() != this.getWeight()){
+                return false;
+            }
+            else if (petObj.getChipId() != this.getChipId()){
+                return false;            
+            }
+            else if (petObj.getHeight() != this.getHeight()){
+                return false;            
+            }
+            else if(petObj.getWidth() != this.getWidth()){
+                return false;
+            }
+            else if (petObj.getLength() != this.getLength()){
+                return false;
+            } 
+            else if (!petObj.getBirthDate().equals(this.getBirthDate())){
+                return false;
+            }
+            else if (!petObj.getOwner().equals(this.getOwner())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

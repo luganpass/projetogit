@@ -38,4 +38,28 @@ public class Appointment extends Event {
         this.description = description;
     }
 
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Appointment){
+            Appointment appointmentObj = (Appointment)obj;
+            if (!appointmentObj.getClinic().equals(this.getClinic())){
+                return false;
+            }
+            else if (!appointmentObj.getVet().equals(this.getVet())){
+                return false;
+            }
+            else if (!appointmentObj.getDescription().equals(this.getDescription())){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }
