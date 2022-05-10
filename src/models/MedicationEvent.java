@@ -58,7 +58,7 @@ public class MedicationEvent extends Event {
             if (medicationEventObj.getDose() != this.getDose()){
                 return false;
             }
-            else if (medicationEventObj.getDoseNumber() != (this.getDoseNumber())){
+            else if (medicationEventObj.getDoseNumber()!= (this.getDoseNumber())){
                 return false;
             }
             else if(!medicationEventObj.getAppointment().equals(this.getAppointment())){
