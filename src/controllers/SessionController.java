@@ -1,6 +1,10 @@
 package controllers;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import models.Session;
+import models.User;
 import repositories.SessionRepository;
 
 public class SessionController {
@@ -16,10 +20,9 @@ public class SessionController {
         sessionRepository.editObject(s1, s2);
     }
 
-
-
-
-    public void startSession(Session session) throws Exception {
+    public void startSessionWithUser(User user) throws Exception {
+        Session session = new Session(user, LocalDateTime.now(), UUID.randomUUID().toString());
+        
         sessionRepository.setActiveSession(session);
         sessionRepository.addObject(session);
     }

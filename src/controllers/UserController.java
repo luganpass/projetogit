@@ -1,6 +1,5 @@
 package controllers;
 
-import helpers.DatabaseCommunication.DataBaseCommunication;
 import helpers.Exceptions.LoginFailedException;
 import helpers.Exceptions.UserAlreadyExistsException;
 import helpers.Exceptions.UserNotFoundException;
@@ -27,8 +26,7 @@ public class UserController {
         userRepository.editObject(user1, user2);
     }
     
-    public User login (String email, String password) throws Exception   {
-        
+    public User login (String email, String password) throws Exception   {       
         for (Identifiable identifiable : userRepository.getObjects()) {
             User castedUser = (User) identifiable;
             if (castedUser.getEmail()== email){
