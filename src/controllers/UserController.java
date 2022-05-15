@@ -26,7 +26,7 @@ public class UserController {
         userRepository.editObject(user1, user2);
     }
     
-    public User login (String email, String password) throws Exception   {       
+    public User checkUserAndPassword (String email, String password) throws Exception   {       
         for (Identifiable identifiable : userRepository.getObjects()) {
             User castedUser = (User) identifiable;
             if (castedUser.getEmail()== email){
