@@ -2,7 +2,7 @@ package repositories;
 
 public class AppointmentRepository extends ListableRepository {
 
-    public AppointmentRepository() throws Exception {
+    public AppointmentRepository() {
         super("AppointmentRepository");
     }
     

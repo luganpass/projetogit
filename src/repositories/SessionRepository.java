@@ -3,22 +3,19 @@ package repositories;
 import models.Session;
 
 public class SessionRepository extends Repository {
-    public static Session activeSession;
+    private static Session activeSession;
+    
+    public static Session getActiveSession(){
+        return SessionRepository.activeSession;
+    }
 
+    public void setActiveSession(Session session){
+        SessionRepository.activeSession = session;
+    }
+    
     public SessionRepository() {
         super("SessionRepository");
     }
 
-    public void startSession(Session session) throws Exception {
-        activeSession = session;
-        this.addObject(session);
-    }
-
-    public void endSession() throws Exception {
-        Session oldSession = (Session) activeSession.clone();
-        activeSession.setFinalTimeStamp();
-        this.editObject(oldSession, activeSession);
-        activeSession = null;
-    }
     
 }
