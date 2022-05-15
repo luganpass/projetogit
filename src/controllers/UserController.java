@@ -10,7 +10,7 @@ import repositories.UserRepository;
 public class UserController {
     private static UserRepository userRepository = new UserRepository();
 
-    public void addUser (User user) throws Exception{
+    public static void addUser (User user) throws Exception{
         for (Identifiable identifiable : userRepository.getObjects()) {
             User castedUser = (User) identifiable;
             if (castedUser.getEmail()== user.getEmail()){
@@ -26,7 +26,7 @@ public class UserController {
         userRepository.editObject(user1, user2);
     }
     
-    public User checkUserAndPassword (String email, String password) throws Exception   {       
+    public static User checkUserAndPassword (String email, String password) throws Exception   {       
         for (Identifiable identifiable : userRepository.getObjects()) {
             User castedUser = (User) identifiable;
             if (castedUser.getEmail()== email){
