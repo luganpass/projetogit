@@ -1,28 +1,18 @@
 package main.java;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
-        // TODO Auto-generated method stub
-        Button btn1 = new Button("Say, Hello World");
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent arg0) {
-                // TODO Auto-generated method stub
-                System.out.println("hello world");
-            }
-        });
-        StackPane root = new StackPane();
-        root.getChildren().add(btn1);
-        Scene scene=new Scene(root,600,400);
-        primaryStage.setTitle("First JavaFX Application");
-        primaryStage.setScene(scene); 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../views/Login/LoginView.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene loginScreen = new Scene(root,600,400);
+        primaryStage.setTitle("Pet Admin");
+        primaryStage.setScene(loginScreen); 
         primaryStage.show(); 
     }  
     public static void main(String[] args) {
