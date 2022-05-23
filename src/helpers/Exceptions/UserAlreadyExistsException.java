@@ -1,7 +1,5 @@
 package helpers.Exceptions;
 
-import models.Identifiable;
-
 public class UserAlreadyExistsException extends Exception {
     private String email;
 

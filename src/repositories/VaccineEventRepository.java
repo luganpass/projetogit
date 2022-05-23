@@ -1,9 +1,9 @@
 package repositories;
 
-public class VaccineEventRepository extends Repository {
+public class VaccineEventRepository extends ListableRepository {
 
     public VaccineEventRepository() {
-        super();
+        super("VaccineEventRepository");
     }
     
 }

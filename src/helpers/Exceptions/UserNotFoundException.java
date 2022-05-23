@@ -1,7 +1,5 @@
 package helpers.Exceptions;
 
-import models.Identifiable;
-
 public class UserNotFoundException extends Exception {
     private String email;
 

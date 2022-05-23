@@ -9,7 +9,7 @@ import models.User;
 public class UserRepository extends Repository {
 
     public UserRepository() {
-        super();
+        super("UserRepository");
     }
 
    public boolean login (String email, String password) throws Exception   {
@@ -31,7 +31,6 @@ public class UserRepository extends Repository {
                 throw new UserAlreadyExistsException(userToAdd.getEmail());
             }
         }
-        this.addObject(object);
-        DataBaseCommunication.addObject(object, this.getFilePath());
+        super.addObject(object);
     }
 }

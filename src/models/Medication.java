@@ -25,4 +25,26 @@ public class Medication extends Identifiable {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
+
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Medication){
+            Medication medicationObj = (Medication)obj;
+            if (!medicationObj.getName().equals(this.getName())){
+                return false;
+            }
+            else if (!medicationObj.getImagePath().equals(this.getImagePath())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

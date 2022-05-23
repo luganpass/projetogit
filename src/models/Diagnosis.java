@@ -48,4 +48,34 @@ public class Diagnosis extends Event {
     public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
+    
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Diagnosis){
+            Diagnosis diagnosisObj = (Diagnosis)obj;
+            if (!diagnosisObj.getClinic().equals(this.getClinic())){
+                return false;
+            }
+            else if (!diagnosisObj.getVet().equals(this.getVet())){
+                return false;
+            }
+            else if (!diagnosisObj.getDescription().equals(this.getDescription())){
+                return false;
+            }
+            else if(!diagnosisObj.getAppointment().equals(this.getAppointment())){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
 }
+

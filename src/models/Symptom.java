@@ -28,5 +28,25 @@ public class Symptom extends Event {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Symptom){
+            Symptom symptomObj = (Symptom)obj;
+            if (!symptomObj.getTitle().equals(this.getTitle())){
+                return false;
+            }
+            else if (!symptomObj.getDescription().equals(this.getDescription())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 }

@@ -35,4 +35,33 @@ public class Session extends Identifiable implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();    // return shallow copy
     }
+    @Override
+    public boolean equals (Object obj){
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (obj instanceof Session){
+            Session sessionObj = (Session)obj;
+            if (!sessionObj.getCURRENT_USER().equals(this.getCURRENT_USER())){
+                return false;
+            }
+            else if (!sessionObj.getInitialTimeStamp().equals(this.getInitialTimeStamp())){
+                return false;
+            }
+            else if (!sessionObj.getFinalTimeStamp().equals(this.getFinalTimeStamp())){
+                return false;
+            }
+            else if (!sessionObj.getId().equals(this.getId())){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
+
 }
