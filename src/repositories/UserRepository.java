@@ -31,7 +31,6 @@ public class UserRepository extends Repository {
                 throw new UserAlreadyExistsException(userToAdd.getEmail());
             }
         }
-        this.addObject(object);
-        DataBaseCommunication.save(this.getObjects(), this.getFilePath());
+        super.addObject(object);
     }
 }

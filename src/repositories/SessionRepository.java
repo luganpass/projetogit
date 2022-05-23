@@ -16,6 +16,4 @@ public class SessionRepository extends Repository {
     public SessionRepository() {
         super("SessionRepository");
     }
-
-    
 }

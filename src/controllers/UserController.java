@@ -29,7 +29,7 @@ public class UserController {
     public static User checkUserAndPassword (String email, String password) throws Exception   {       
         for (Identifiable identifiable : userRepository.getObjects()) {
             User castedUser = (User) identifiable;
-            if (castedUser.getEmail()== email){
+            if (castedUser.getEmail().equals(email)){
                 if (castedUser.isPasswordCorrect(password)){
                     return castedUser;
                 }

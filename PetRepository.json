@@ -1,1 +1,71 @@
-[{"name":"name","species":"Cat","weight":2.0,"chipId":2374984,"height":2.0,"width":2.0,"length":2.0,"birthDate":{"year":2022,"month":5,"day":9},"owner":{"name":"name","email":"email","age":20,"password":"password","userType":"Vet","id":"3278697"},"id":"37987"},{"name":"name2","species":"Cat","weight":2.0,"chipId":2374984,"height":2.0,"width":2.0,"length":2.0,"birthDate":{"year":2022,"month":5,"day":9},"owner":{"name":"name","email":"email","age":20,"password":"password","userType":"Vet","id":"3278697"},"id":"37987"},{"name":"name","species":"Cat","weight":2.0,"chipId":2374984,"height":2.0,"width":2.0,"length":2.0,"birthDate":{"year":2022,"month":5,"day":9},"owner":{"name":"name","email":"email","age":20,"password":"password","userType":"Vet","id":"3278697"},"id":"37987"},{"name":"name2","species":"Cat","weight":2.0,"chipId":2374984,"height":2.0,"width":2.0,"length":2.0,"birthDate":{"year":2022,"month":5,"day":9},"owner":{"name":"name","email":"email","age":20,"password":"password","userType":"Vet","id":"3278697"},"id":"37987"}]
+[
+    {
+        "name": "Pet Test",
+        "species": "Dog",
+        "weight": 12.0,
+        "chipId": 4789378,
+        "height": 2.0,
+        "width": 2.0,
+        "length": 2.0,
+        "birthDate": {
+            "year": 2022,
+            "month": 5,
+            "day": 22
+        },
+        "owner": {
+            "name": "Usuário Teste",
+            "email": "test@test.com",
+            "age": 29,
+            "password": "test@123",
+            "userType": "PetOwner",
+            "id": "78b6b0b6-5d0b-487b-bc0e-e1451b92fe9d"
+        },
+        "id": "843d1eda-c826-4d87-8b94-8dac0b7cade7"
+    },
+    {
+        "name": "Pet Test 2",
+        "species": "Dog",
+        "weight": 12.0,
+        "chipId": 4789378,
+        "height": 2.0,
+        "width": 2.0,
+        "length": 2.0,
+        "birthDate": {
+            "year": 2022,
+            "month": 5,
+            "day": 22
+        },
+        "owner": {
+            "name": "Usuário Teste",
+            "email": "test@test.com",
+            "age": 29,
+            "password": "test@123",
+            "userType": "PetOwner",
+            "id": "78b6b0b6-5d0b-487b-bc0e-e1451b92fe9d"
+        },
+        "id": "843d1eda-c826-4d87-8b94-8dac0b7cade8"
+    },
+    {
+        "name": "Pet Test 3",
+        "species": "Dog",
+        "weight": 12.0,
+        "chipId": 4789378,
+        "height": 2.0,
+        "width": 2.0,
+        "length": 2.0,
+        "birthDate": {
+            "year": 2022,
+            "month": 5,
+            "day": 22
+        },
+        "owner": {
+            "name": "Usuário Teste",
+            "email": "test@test.com",
+            "age": 29,
+            "password": "test@123",
+            "userType": "PetOwner",
+            "id": "78b6b0b6-5d0b-487b-bc0e-e1451b92fe9d"
+        },
+        "id": "843d1eda-c826-4d87-8b94-8dac0b7cade9"
+    }
+]

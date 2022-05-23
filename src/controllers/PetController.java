@@ -1,6 +1,10 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import models.Pet;
+import models.User;
 import repositories.PetRepository;
 
 public class PetController {
@@ -14,5 +18,11 @@ public class PetController {
     }
     public void editPet (Pet p1, Pet p2) throws Exception{
         petRepository.editObject(p1, p2);
+    }
+    public ArrayList<Pet> getPetsListFromNewerToOlder() throws Exception {
+        return petRepository.getPetsListFromNewerToOlder();
+    }
+    public ArrayList<Pet> getPetsFromUser(User user) throws Exception {
+        return new ArrayList<Pet>(petRepository.getPetsListFromNewerToOlder().stream().filter((pet) -> { return pet.getOwner().equals(user);}).collect(Collectors.toList()));
     }
 }

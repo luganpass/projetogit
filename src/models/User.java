@@ -59,7 +59,7 @@ public class User extends Identifiable {
     }
 
     public boolean isPasswordCorrect(String password) {
-        return this.password == password;
+        return this.password.equals(password);
     }
 
     @Override

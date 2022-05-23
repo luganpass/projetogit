@@ -10,6 +10,10 @@ import repositories.SessionRepository;
 public class SessionController {
     private static SessionRepository sessionRepository = new SessionRepository();
 
+    public Session getActiveSession() {
+        return SessionRepository.getActiveSession();
+    }
+
     public void addSession (Session s) throws Exception{
         sessionRepository.addObject(s);
     }
